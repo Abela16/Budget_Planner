@@ -1,4 +1,6 @@
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
+
 
 function ExpenseItem(props) {
     const expenseDate = new Date(props.date);
@@ -9,12 +11,7 @@ function ExpenseItem(props) {
 
     return (
         <div className="expense-item">
-            <div>
-            <div>{day}</div>
-            <div>{month}</div>
-            <div>{year}</div>
-        </div>
-            <div>March 28th 2025</div>
+            <ExpenseDate date={props.date}></ExpenseDate>
             <div className="expense-item-discription">
                 <p className='expense-item-text'>{props.title}</p>
                 <div className="expense-item-price">${props.price}</div>
