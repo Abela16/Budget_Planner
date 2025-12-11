@@ -1,12 +1,17 @@
-import ExpenseItem from "./components/ExpenseItem.jsx";
+import Expenses from "./components/Expenses.jsx";
+import './App.css'
 
 function App() {
-  
+
+  const expenses = [
+    {id: 'e1', title: 'Car', amount: 4000, date: new Date(2024, 0, 7)},
+    {id: 'e2', title: 'Phone', amount: 400, date: new Date(2025, 5, 6)},
+    {id: 'e3', title: 'Laptop', amount: 400, date: new Date(2024, 5, 4)},
+    {id: 'e4', title: 'Bike', amount: 800, date: new Date(2023, 2, 14)}
+  ];
   return (
     <div className="text-center">
-      <ExpenseItem date="2024-01-07" title="Car " price="4000"></ExpenseItem>
-      <ExpenseItem date="2025-06-06" title="Phone" price="400"></ExpenseItem>
-      <ExpenseItem date="2024-06-04" title="Laptop" price="400"></ExpenseItem>
+      <Expenses items={expenses}></Expenses>
     </div>
   );
 }
