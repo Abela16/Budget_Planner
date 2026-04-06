@@ -1,0 +1,134 @@
+.analytics-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.analytics-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.period-selector {
+  display: flex;
+  gap: 0.3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.25rem;
+}
+
+.period-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.period-btn:hover {
+  color: var(--text-primary);
+}
+
+.period-btn--active {
+  background: var(--accent);
+  color: white;
+}
+
+.period-btn--active:hover {
+  color: white;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  padding: 0.25rem 0;
+}
+
+.category-row-name {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+.category-row-value {
+  font-weight: 600;
+  min-width: 70px;
+  text-align: right;
+}
+
+.category-row-pct {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  min-width: 45px;
+  text-align: right;
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.payment-icon {
+  font-size: 1.2rem;
+  width: 28px;
+  text-align: center;
+}
+
+.payment-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.payment-bar-wrapper {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.payment-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.payment-amount {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
