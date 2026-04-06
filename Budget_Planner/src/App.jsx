@@ -1,18 +1,27 @@
-import Expenses from "./components/Expenses.jsx";
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ExpenseProvider } from './context/ExpenseContext';
+import Layout from './components/layout/Layout';
+import Dashboard from './pages/Dashboard';
+import ExpensesPage from './pages/Expenses';
+import BudgetPage from './pages/Budget';
+import Analytics from './pages/Analytics';
+import Settings from './pages/Settings';
 
 function App() {
-
-  const expenses = [
-    {id: 'e1', title: 'Car', amount: 4000, date: new Date(2024, 0, 7)},
-    {id: 'e2', title: 'Phone', amount: 400, date: new Date(2025, 5, 6)},
-    {id: 'e3', title: 'Laptop', amount: 400, date: new Date(2024, 5, 4)},
-    {id: 'e4', title: 'Bike', amount: 800, date: new Date(2023, 2, 14)}
-  ];
   return (
-    <div className="text-center">
-      <Expenses items={expenses}></Expenses>
-    </div>
+    <ExpenseProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/expenses" element={<ExpensesPage />} />
+            <Route path="/budget" element={<BudgetPage />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ExpenseProvider>
   );
 }
 
